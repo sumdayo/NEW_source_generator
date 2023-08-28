@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <div>
+            <h1 class="title">
+                出典元自動生成サイト
+            </h1>
+        </div> 
+    </header>
+    <div class="main">
+        <div class="container">
+            <p class="text-center">発信元＋（発信年号）＋「記事タイトル」＋配信年号、URL（最終閲覧年月日）</p>
+            <form class="form" action="" method="post">
+            <div class="form_url">
+                <label >URL</label>
+                <input type="text" name="url" id="UrlText" placeholder="URLを入力">
+            </div>
+            <div class="form_title">
+                <label >タイトル</label>
+                <input type="text" name="url" id="Title" placeholder="タイトルを入力">
+            </div>
+            </form>  
+            <input type="button" value="生成" id="btn" class="">
+        </div>
+        <div class="container">
+            <h2 class="">結果</h2>
+            <p id="result" class=""></p>
+        </div>
+        <div class="container">
+            <ul>
+                <li id="li_dom"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
