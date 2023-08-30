@@ -15,7 +15,7 @@
     </header>
     <div class="main">
         <div class="container">
-            <p class="text-center">発信元＋（発信年号）＋「記事タイトル」＋配信年号、URL（最終閲覧年月日）</p>
+            <p class="text-center">[著者名]. [“ウェブページの題名”]. [ウェブサイトの名称]. [URL], [(参照日)].</p>
             <form class="form" action="" method="post">
             <div class="form_url">
                 <label >URL</label>
@@ -25,21 +25,21 @@
                 <label >タイトル</label>
                 <input type="text" name="url" id="Title" placeholder="タイトルを入力">
             </div>
+            <div class="form_url">
+                <label >著者名</label>
+                <input type="text" name="url" id="Author" placeholder="URLを入力">
+            </div>
             </form>  
-            <input type="button" value="生成" id="btn" class="">
+            <input type="button" value="生成" id="btn" class=""> 
+            <input type="button" value="テンプレート1生成" id="template_btn" class="">
+            <input type="button" value="テンプレート2生成" id="template2_btn" class="">
         </div>
         <div class="container">
             <h2 class="">結果</h2>
-            <p id="result" class=""></p>
+            <p id="result" class="container_result"></p>
+            <button onclick="copy()">コピー</button>
         </div>
-        <div class="container">
-            <ul>
-                <li id="li_dom"></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
+        
     </div>
     <script src="./script.js"></script>
 </body>

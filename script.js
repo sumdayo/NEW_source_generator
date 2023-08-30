@@ -13,11 +13,15 @@
 //     console.log(e)
 // })
     let sample_arr = ['.com','.jp','.net','.org','.co.jp','.inc','.tokyo','.info','.ai','.biz','.gov','.edu'];
+    let result = document.getElementById('result');
+    let sankoubunken = ["【出典】"];
+
+
 
 function submitClick(){
     let UrlText = document.getElementById('UrlText');
     let Title = document.getElementById('Title');
-    let result = document.getElementById('result');
+    let Author = document.getElementById('Author');
 
     let str = UrlText.value;
     let arr = str.split("");
@@ -39,15 +43,51 @@ function submitClick(){
     let year = d.getFullYear();
     let month = d.getMonth() + 1;
     let day = d.getDate();
-    let date = year + '年' + month + '月' + day + '日';
-    result.innerText = ans +'「'+ Title.value +'」'+'、'+ UrlText.value+'('+ date +')';
-}
+    let date = year + '-' + month + '-' + day;
+    sankoubunken.push(`${Author.value}"${ Title.value}"${UrlText.value},（参照${date}）`);
+    console.log(sankoubunken);
 
+    result.innerText = sankoubunken.join('\n');
+}
 
 let btn = document.getElementById('btn');
 btn.addEventListener('click',submitClick);
 
-// 備考欄
-let li_dom = document.getElementById('li_domein');
-let dom = sample_arr.join('');
-li_dom.innerHTML = dom + 'に対応しています。';
+
+let template_btn = document.getElementById('template_btn');
+template_btn.addEventListener('click',template1Click);
+
+let template2_btn = document.getElementById('template2_btn');
+template2_btn.addEventListener('click',template2Click);
+
+function template1Click(){
+    let UrlText = document.getElementById('UrlText');
+    let Title = document.getElementById('Title');
+    let Author = document.getElementById('Author');
+
+    UrlText.value = "tanakatarou.com";
+    Title.value = "プロフィールサイト"
+    Author.value = "田中太郎";
+}
+function template2Click(){
+    let UrlText = document.getElementById('UrlText');
+    let Title = document.getElementById('Title');
+    let Author = document.getElementById('Author');
+
+    UrlText.value = "satouhihumi.jp";
+    Title.value = "ブログサイト"
+    Author.value = "佐藤一二三";
+}
+
+// コピーボタン
+function copy() {
+    let text = document.getElementById('container_result').innerText;
+
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            console.log('テキストがクリップボードにコピーされました');
+        })
+        .catch((error) => {
+            console.error('テキストのコピー中にエラーが発生しました', error);
+        });
+}
