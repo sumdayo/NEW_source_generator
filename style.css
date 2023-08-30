@@ -29,13 +29,17 @@ header {
     display: flex;
 }
 
-.form_url {
-    display: block;
-}
 .form_title {
 
 }
+.container_setting {
+    width: 80%;
+}
 .container_result { 
+    width: 80%;
+}
+.text_result { 
     border: 1px solid black;
-    width: ;
+    height: auto;
+
 }

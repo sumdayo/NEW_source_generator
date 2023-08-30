@@ -44,7 +44,7 @@ function submitClick(){
     let month = d.getMonth() + 1;
     let day = d.getDate();
     let date = year + '-' + month + '-' + day;
-    sankoubunken.push(`${Author.value}"${ Title.value}"${UrlText.value},（参照${date}）`);
+    sankoubunken.push(`${Author.value}"${ Title.value}"${ UrlText.value},（参照${date}）`);
     console.log(sankoubunken);
 
     result.innerText = sankoubunken.join('\n');
